@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ArabaAra Projesi - Teknik Dokümantasyon</title>
+	<style>
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			line-height: 1.6;
+			color: #333;
+			background: white;
+		}
+		header {
+			background: linear-gradient(135deg, #001a33, #0052cc);
+			color: white;
+			padding: 40px 20px;
+			text-align: center;
+		}
+		h1 { font-size: 2.5em; margin-bottom: 10px; }
+		header p { font-size: 1.1em; opacity: 0.9; }
+		.container {
+			max-width: 900px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		h2 {
+			color: #001a33;
+			margin-top: 40px;
+			margin-bottom: 15px;
+			border-bottom: 2px solid #0052cc;
+			padding-bottom: 10px;
+		}
+		h3 {
+			color: #0052cc;
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+		p, li {
+			margin-bottom: 10px;
+		}
+		ul { margin-left: 20px; }
+		code {
+			background: #f4f4f4;
+			padding: 2px 6px;
+			border-radius: 3px;
+			font-family: 'Courier New', monospace;
+			color: #d73a49;
+		}
+		pre {
+			background: #f4f4f4;
+			padding: 15px;
+			border-radius: 5px;
+			overflow-x: auto;
+			margin: 10px 0;
+			border-left: 4px solid #0052cc;
+			font-family: 'Courier New', monospace;
+			font-size: 0.9em;
+		}
+		.box {
+			background: #f9f9f9;
+			border-left: 4px solid #0052cc;
+			padding: 15px;
+			margin: 15px 0;
+			border-radius: 3px;
+		}
+		.box.warning {
+			border-left-color: #ff9800;
+			background: #fff3e0;
+		}
+		.box.success {
+			border-left-color: #28a745;
+			background: #f0f8f0;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin: 15px 0;
+		}
+		table th, table td {
+			padding: 10px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+		table th {
+			background: #001a33;
+			color: white;
+		}
+		.page-break {
+			page-break-after: always;
+		}
+		footer {
+			text-align: center;
+			margin-top: 50px;
+			padding-top: 20px;
+			border-top: 1px solid #ddd;
+			color: #666;
+			font-size: 0.9em;
+		}
+		@media print {
+			header { background: #333; }
+			h2 { page-break-before: avoid; }
+			code { background: white; color: #333; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>🚗 ArabaAra Projesi</h1>
+		<p>Araç Satış Platform - Frontend + Backend Uygulaması</p>
+		<p style="font-size: 0.9em; margin-top: 10px;">Hazırlanan Tarih: Mart 22, 2026</p>
+	</header>
+
+	<div class="container">
+
+		<h2>1. Proje Özeti</h2>
+		<p><strong>ArabaAra</strong>, kullanıcıların araç satış ilanlarını ekleyebilmesi, görüntüleyebilmesi ve yönetebilmesi için tasarlanmış bir web platformudur.</p>
+
+		<h3>✨ Temel Özellikler:</h3>
+		<ul>
+			<li>✅ Kullanıcı Kayıt ve Giriş Sistemi (JWT Authentication)</li>
+			<li>✅ Araç İlanları CRUD Operasyonları</li>
+			<li>✅ Kayıt Defteri Rolü Yönetimi</li>
+			<li>✅ Responsif Modern UI Tasarımı</li>
+			<li>✅ RESTful API Architecture</li>
+			<li>✅ SQL Server Veritabanı</li>
+		</ul>
+
+		<h2>2. Teknoloji Yığını</h2>
+
+		<h3>Frontend</h3>
+		<table>
+			<tr>
+				<th>Teknoloji</th>
+				<th>Versiyon</th>
+				<th>Açıklama</th>
+			</tr>
+			<tr>
+				<td>HTML5</td>
+				<td>5</td>
+				<td>Markup ve yapı</td>
+			</tr>
+			<tr>
+				<td>CSS3</td>
+				<td>3</td>
+				<td>Stiller ve responsive tasarım</td>
+			</tr>
+			<tr>
+				<td>JavaScript</td>
+				<td>ES6+</td>
+				<td>Etkileşim ve API entegrasyonu</td>
+			</tr>
+		</table>
+
+		<h3>Backend</h3>
+		<table>
+			<tr>
+				<th>Teknoloji</th>
+				<th>Versiyon</th>
+				<th>Açıklama</th>
+			</tr>
+			<tr>
+				<td>ASP.NET Core</td>
+				<td>5.0</td>
+				<td>Web API framework'ü</td>
+			</tr>
+			<tr>
+				<td>Entity Framework Core</td>
+				<td>5.0</td>
+				<td>ORM (Object-Relational Mapping)</td>
+			</tr>
+			<tr>
+				<td>SQL Server</td>
+				<td>LocalDB</td>
+				<td>Veritabanı</td>
+			</tr>
+			<tr>
+				<td>JWT</td>
+				<td>6.8.0</td>
+				<td>Kimlik doğrulama</td>
+			</tr>
+			<tr>
+				<td>BCrypt</td>
+				<td>1.6.0</td>
+				<td>Şifre hashleme</td>
+			</tr>
+		</table>
+
+		<h2>3. Proje Yapısı</h2>
+		<pre>
+proje11-2-1/
+├── frontend.html              # Ana sayfa (HTML)
+├── frontend.css               # Stiller (CSS)
+├── frontend.js                # İstemci tarafı logic (JavaScript)
+├── test-api.html              # API test sayfası
+├── README.md                  # Detaylı dokümantasyon
+├── SETUP.md                   # Kurulum talimatları
+├── görseller/                 # Resim dosyaları
+├── backend/                   # ASP.NET Core API
+│   ├── Controllers/           # API endpoint'leri
+│   ├── Models/                # Veri modelleri
+│   ├── Services/              # İş mantığı
+│   ├── DTOs/                  # Data Transfer Objects
+│   ├── Data/                  # Veritabanı context
+│   ├── start.bat              # Windows başlatma dosyası
+│   ├── start.sh               # Linux/Mac başlatma dosyası
+│   └── CarListingAPI.csproj   # .NET proje dosyası
+└── proje11-2-1-Complete.zip   # Tam proje (sıkıştırılmış)
+		</pre>
+
+		<h2 class="page-break">4. Başlangıç Rehberi</h2>
+
+		<h3>Adım 1: Backend'i Kurma</h3>
+		<ol>
+			<li>.NET 5 SDK'nın kurulu olup olmadığını kontrol et:
+				<pre>dotnet --version</pre>
+			</li>
+			<li>Backend klasörüne git:
+				<pre>cd backend</pre>
+			</li>
+			<li>Veritabanını oluştur:
+				<pre>dotnet ef database update</pre>
+			</li>
+			<li>API'yi çalıştır:
+				<pre>dotnet run</pre>
+			</li>
+		</ol>
+
+		<div class="box success">
+			<strong>✅ Başarılı!</strong> API şu adreste çalışıyor:
+			<pre>http://localhost:5000</pre>
+		</div>
+
+		<h3>Adım 2: Frontend'i Açma</h3>
+		<ol>
+			<li><code>frontend.html</code> dosyasını tarayıcıda aç</li>
+			<li>veya Live Server (VS Code) ile aç</li>
+			<li>veya Python server ile aç:
+				<pre>python -m http.server 8000</pre>
+			</li>
+		</ol>
+
+		<h3>Adım 3: Test Etme</h3>
+		<ol>
+			<li>Tarayıcı konsolunu aç: <code>F12</code></li>
+			<li>"Kayıt Ol" butonuna tıkla</li>
+			<li>Form doldurup kayıt oluş</li>
+			<li>Giriş yap ve ilanları test et</li>
+		</ol>
+
+		<h2>5. API Endpoints</h2>
+
+		<h3>Kimlik Doğrulama (Auth)</h3>
+		<table>
+			<tr>
+				<th>Method</th>
+				<th>URL</th>
+				<th>Açıklama</th>
+			</tr>
+			<tr>
+				<td>POST</td>
+				<td>/api/auth/register</td>
+				<td>Yeni kullanıcı kaydı</td>
+			</tr>
+			<tr>
+				<td>POST</td>
+				<td>/api/auth/login</td>
+				<td>Kullanıcı girişi</td>
+			</tr>
+		</table>
+
+		<h3>Araçlar (Cars)</h3>
+		<table>
+			<tr>
+				<th>Method</th>
+				<th>URL</th>
+				<th>Açıklama</th>
+				<th>Auth</th>
+			</tr>
+			<tr>
+				<td>GET</td>
+				<td>/api/cars</td>
+				<td>Tüm ilanlar</td>
+				<td>Hayır</td>
+			</tr>
+			<tr>
+				<td>GET</td>
+				<td>/api/cars/{id}</td>
+				<td>Tek ilan</td>
+				<td>Hayır</td>
+			</tr>
+			<tr>
+				<td>POST</td>
+				<td>/api/cars</td>
+				<td>Yeni ilan oluştur</td>
+				<td>Evet</td>
+			</tr>
+			<tr>
+				<td>PUT</td>
+				<td>/api/cars/{id}</td>
+				<td>İlan güncelle</td>
+				<td>Evet</td>
+			</tr>
+			<tr>
+				<td>DELETE</td>
+				<td>/api/cars/{id}</td>
+				<td>İlan sil</td>
+				<td>Evet</td>
+			</tr>
+			<tr>
+				<td>GET</td>
+				<td>/api/cars/user/{userId}</td>
+				<td>Kullanıcının ilanları</td>
+				<td>Hayır</td>
+			</tr>
+		</table>
+
+		<h2 class="page-break">6. Veri Modelleri</h2>
+
+		<h3>User (Kullanıcı)</h3>
+		<pre>
+{
+  "id": 1,
+  "email": "user@example.com",
+  "username": "username",
+  "fullName": "John Doe",
+  "createdAt": "2026-03-22T10:00:00Z",
+  "isActive": true
+}
+		</pre>
+
+		<h3>CarListing (Araç İlanı)</h3>
+		<pre>
+{
+  "id": 1,
+  "userId": 1,
+  "make": "Mercedes-Benz",
+  "model": "C-Class",
+  "year": 2023,
+  "type": "sedan",
+  "price": 4500000,
+  "kilometers": 15000,
+  "fuelType": "Dizel",
+  "transmission": "Otomatik",
+  "power": 200,
+  "location": "İstanbul",
+  "description": "Çok temiz araç",
+  "imageUrl": "https://...",
+  "createdAt": "2026-03-22T10:30:00Z",
+  "isActive": true
+}
+		</pre>
+
+		<h2>7. Kimlik Doğrulama (JWT)</h2>
+
+		<h3>Token Yapısı</h3>
+		<pre>
+Header: {
+  "alg": "HS256",
+  "typ": "JWT"
+}
+
+Payload: {
+  "sub": "1",
+  "email": "user@example.com",
+  "name": "username",
+  "iat": 1645353600,
+  "exp": 1645440000
+}
+
+Signature: HMACSHA256(base64UrlEncode(header) + "." + base64UrlEncode(payload), secret)
+		</pre>
+
+		<h3>Token Kullanımı</h3>
+		<pre>
+GET /api/cars
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+		</pre>
+
+		<h2>8. Veritabanı Şeması</h2>
+
+		<h3>Users Tablosu</h3>
+		<table>
+			<tr>
+				<th>Kolon</th>
+				<th>Tip</th>
+				<th>Açıklama</th>
+			</tr>
+			<tr>
+				<td>Id</td>
+				<td>INT PRIMARY KEY</td>
+				<td>Kullanıcı ID'si</td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td>VARCHAR UNIQUE</td>
+				<td>E-posta (unique)</td>
+			</tr>
+			<tr>
+				<td>Username</td>
+				<td>VARCHAR UNIQUE</td>
+				<td>Kullanıcı adı (unique)</td>
+			</tr>
+			<tr>
+				<td>PasswordHash</td>
+				<td>VARCHAR</td>
+				<td>BCrypt hashlenmişşifre</td>
+			</tr>
+			<tr>
+				<td>FullName</td>
+				<td>VARCHAR</td>
+				<td>Tam ad</td>
+			</tr>
+			<tr>
+				<td>CreatedAt</td>
+				<td>DATETIME</td>
+				<td>Oluşturma tarihi</td>
+			</tr>
+			<tr>
+				<td>IsActive</td>
+				<td>BIT</td>
+				<td>Hesap durumu</td>
+			</tr>
+		</table>
+
+		<h3>CarListings Tablosu</h3>
+		<table>
+			<tr>
+				<th>Kolon</th>
+				<th>Tip</th>
+				<th>Açıklama</th>
+			</tr>
+			<tr>
+				<td>Id</td>
+				<td>INT PRIMARY KEY</td>
+				<td>İlan ID'si</td>
+			</tr>
+			<tr>
+				<td>UserId</td>
+				<td>INT FK</td>
+				<td>Sahibin ID'si</td>
+			</tr>
+			<tr>
+				<td>Make</td>
+				<td>VARCHAR</td>
+				<td>Araç markası</td>
+			</tr>
+			<tr>
+				<td>Model</td>
+				<td>VARCHAR</td>
+				<td>Araç modeli</td>
+			</tr>
+			<tr>
+				<td>Price</td>
+				<td>DECIMAL(18,2)</td>
+				<td>Fiyat</td>
+			</tr>
+			<tr>
+				<td>CreatedAt</td>
+				<td>DATETIME</td>
+				<td>Oluşturma tarihi</td>
+			</tr>
+		</table>
+
+		<h2 class="page-break">9. Sorun Giderme</h2>
+
+		<div class="box warning">
+			<strong>❌ Sorun: "dotnet: The term 'dotnet' is not recognized"</strong><br>
+			<strong>✅ Çözüm:</strong> .NET 5 SDK kurulu değil. Microsoft .NET website'sinden indir ve kur.
+		</div>
+
+		<div class="box warning">
+			<strong>❌ Sorun: "Cannot connect to database"</strong><br>
+			<strong>✅ Çözüm:</strong>
+			<pre>
+cd backend
+dotnet ef database drop
+dotnet ef database update
+			</pre>
+		</div>
+
+		<div class="box warning">
+			<strong>❌ Sorun: "Frontend API'ye bağlanılamıyor"</strong><br>
+			<strong>✅ Çözüm:</strong>
+			<ol>
+				<li>Backend'in çalışıp çalışmadığını kontrol et: http://localhost:5000</li>
+				<li>Firewall ayarlarını kontrol et</li>
+				<li>Browser konsolunu aç (F12) ve hataları gör</li>
+				<li>test-api.html ile API'yi test et</li>
+			</ol>
+		</div>
+
+		<h2>10. Deployment</h2>
+
+		<h3>Frontend Deployment</h3>
+		<p>Frontend tamamen statiktir ve herhangi bir web serverında çalışır:</p>
+		<ul>
+			<li><strong>Firebase Hosting</strong> - Ücretsiz ve hızlı</li>
+			<li><strong>Netlify</strong> - Otomatik deployment</li>
+			<li><strong>Vercel</strong> - Optimized performance</li>
+			<li><strong>GitHub Pages</strong> - Ücretsiz</li>
+		</ul>
+
+		<h3>Backend Deployment</h3>
+		<pre>
+# Release build oluştur
+dotnet publish -c Release -o ./publish
+
+# Çalıştır
+dotnet publish/CarListingAPI.dll
+		</pre>
+
+		<h2>11. Güvenlik Notları</h2>
+		<ul>
+			<li>✅ Şifreler BCrypt ile hashlenir (11 rounds)</li>
+			<li>✅ JWT token'lar 24 saat geçerlidir</li>
+			<li>✅ CORS tüm originlere açıktır (production'da kısıtla)</li>
+			<li>✅ SQL Injection koruması (Entity Framework kullanımı)</li>
+			<li>✅ XSS koruması (HTML encoding)</li>
+		</ul>
+
+		<h2>12. İletişim ve Destek</h2>
+		<p>Herhangi bir sorun için:</p>
+		<ol>
+			<li>Browser console'unu açın (F12)</li>
+			<li>Backend log'larına bakın</li>
+			<li>test-api.html ile API'yi test edin</li>
+			<li>Hata mesajlarını inceleyin</li>
+		</ol>
+
+		<footer>
+			<p><strong>ArabaAra Projesi</strong> | Mart 22, 2026 | Versiyon 1.0</p>
+			<p>Frontend + Backend entegre çözüm | Modern Web Development</p>
+		</footer>
+
+	</div>
+</body>
+</html>
