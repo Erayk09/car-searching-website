@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ArabaAra - Araba Satış Platform
 
 ## 📱 Frontend + Backend Uygulaması
@@ -43,7 +44,7 @@ görseller/         - Resim klasörü
 
 ---
 
-## 🛠 Backend Kurulumu (.NET 5)
+## 🛠 Backend Kurulumu (.NET 10)
 
 ### Adım 1: Backend Klasörüne Gidin
 ```bash
@@ -257,3 +258,6 @@ Herhangi bir sorunuz varsa:
 
 **Son Güncelleme**: Mart 22, 2026
 **Versiyon**: 1.0
+=======
+# car-searching-website
+>>>>>>> 5238cab077636de90a05daa7b0fea113798fcce0
