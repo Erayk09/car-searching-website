@@ -149,7 +149,7 @@ localStorage.getItem('user')       // User JSON
 - Modal ve form yönetimi
 
 ### Backend
-- ASP.NET Core 5
+- ASP.NET Core 10.0.203
 - Entity Framework Core
 - JWT Authentication
 - SQL Server
