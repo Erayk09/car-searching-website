@@ -1,166 +1,117 @@
-<<<<<<< HEAD
-# ArabaAra - Araba Satış Platform
+ArabaAra - Car Sales Platform
+📱 Frontend + Backend Application
+🎯 Features
+✅ User Management
 
-## 📱 Frontend + Backend Uygulaması
+Register
+Login / Logout
+JWT Token-based authentication
+✅ Vehicle Listings
 
-### 🎯 Özellikler
+View all listings
+Add new listings (only for logged-in users)
+View listing details
+Update and delete listings
+✅ UI/UX
 
-✅ **Kullanıcı Yönetimi**
-- Kayıt (Register)
-- Giriş (Login) / Çıkış (Logout)
-- JWT Token tabanlı kimlik doğrulama
+Responsive design
+Modal forms
+Category-based filtering
+Search feature
+Notification system
+🚀 Frontend Setup
+The frontend is simple HTML/CSS/JavaScript. No installation is required.
 
-✅ **Araç İlanları**
-- Tüm ilanları görüntüleme
-- Yeni ilanlar ekleme (sadece giriş yapanlar)
-- İlan detaylarını görüntüleme
-- İlan güncelleme ve silme
+File Structure
+frontend2.html      - Main page
+frontend2.css       - Styles
+frontend2.js        - JavaScript logic & API integration
+görseller/         - Images folder
 
-✅ **UI/UX**
-- Responsif tasarım
-- Modal formlar
-- Kategoriye göre filtreleme
-- Arama özelliği
-- Bildirim sistemi
 
----
+Running
+Open it using a simple HTTP server (Python, Live Server, etc.)
+Open the frontend.html file
+Make sure the backend is running
+🛠 Backend Setup (.NET 10)
+Step 1: Go to the Backend Folder
 
-## 🚀 Frontend Kurulumu
-
-Frontend basit HTML/CSS/JavaScript'tir. Herhangi bir yükleme gerekmez.
-
-### Dosya Yapısı
-```
-frontend.html      - Ana sayfa
-frontend.css       - Stiller
-frontend.js        - JavaScript logic & API entegrasyonu
-görseller/         - Resim klasörü
-```
-
-### Çalıştırma
-1. Basit bir HTTP server'ında açın (Python, Live Server, vs.)
-2. `frontend.html` dosyasını açın
-3. Backend'in çalıştığından emin olun
-
----
-
-## 🛠 Backend Kurulumu (.NET 10)
-
-### Adım 1: Backend Klasörüne Gidin
-```bash
 cd backend
-```
+Step 2: Create the Database
 
-### Adım 2: Veritabanı Oluşturun
-```bash
 dotnet ef database update
-```
+This command will create a database named CarListingDB in LocalDB.
 
-Bu komut LocalDB'de `CarListingDB` adında bir veritabanı oluşturacaktır.
+Step 3: Run the API
 
-### Adım 3: API'yi Çalıştırın
-```bash
 dotnet run
-```
+By default, the API will open at http://localhost:5000.
 
-API varsayılan olarak `http://localhost:5000` adresinde açılacaktır.
+Step 4: Open Swagger UI (Optional)
+To test the API:
 
-### Adım 4: Swagger UI'ı Açın (İsteğe Bağlı)
-API test etmek için:
-```
+
 http://localhost:5000/swagger
-```
+📋 Database
+SQL Server LocalDB
+Server: (localdb)\mssqllocaldb
+Database: CarListingDB
+Connection: Defined in the appsettings.json file
+Tables
+Users - Users
+CarListings - Car listings
+🔐 Authentication (JWT)
+Token Structure
+Secret: 32+ characters (in appsettings.json)
+Expiry: 24 hours
+Issuer: CarListingAPI
+Audience: CarListingAPIUsers
+Token Usage in Frontend
+Automatically stored in LocalStorage:
 
----
 
-## 📋 Veri Tabanı
-
-### SQL Server LocalDB
-- **Server**: `(localdb)\mssqllocaldb`
-- **Database**: `CarListingDB`
-- **Connection**: `appsettings.json` dosyasında tanımlı
-
-### Tablolar
-- `Users` - Kullanıcılar
-- `CarListings` - Araç ilanları
-
----
-
-## 🔐 Kimlik Doğrulama (JWT)
-
-### Token Yapısı
-- **Secret**: 32+ karakter (appsettings.json'da)
-- **Expiry**: 24 saat
-- **Issuer**: CarListingAPI
-- **Audience**: CarListingAPIUsers
-
-### Frontend'de Token Kullanımı
-LocalStorage'da otomatik saklanır:
-```javascript
 localStorage.getItem('token')      // JWT Token
 localStorage.getItem('user')       // User JSON
-```
+🌐 API Endpoints
+Authentication
+POST /api/auth/register - Register
+POST /api/auth/login - Login
+Vehicles (Cars)
+GET /api/cars - All listings
+GET /api/cars/{id} - Single listing
+POST /api/cars - New listing (Auth required)
+PUT /api/cars/{id} - Update listing (Auth required)
+DELETE /api/cars/{id} - Delete listing (Auth required)
+GET /api/cars/user/{userId} - User's listings
+🧪 Testing
+1. Create an Account
+Click the "Register" button in the frontend
+Fill out the form and submit
+2. Login
+Click the "Login" button
+Enter email and password
+3. Add a Listing
+Click the "+ Add Listing" button in the top-right corner
+Do not submit the form after filling it out
+The listing will be added to the gallery
+4. View Listing Details
+Click any vehicle card
+The details modal will open
+📚 Learning Resources
+Frontend
+HTML/CSS/JavaScript vanilla
+HTTP calls with Fetch API
+Local Storage management
+Modal and form management
+Backend
+ASP.NET Core 10.0.203
+Entity Framework Core
+JWT Authentication
+SQL Server
+RESTful API Design
+⚙️ Configuration
+appsettings.json (Backend)
 
----
-
-## 🌐 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Kayıt
-- `POST /api/auth/login` - Giriş
-
-### Araçlar (Cars)
-- `GET /api/cars` - Tüm ilanlar
-- `GET /api/cars/{id}` - Tek ilan
-- `POST /api/cars` - Yeni ilan (Auth gerekli)
-- `PUT /api/cars/{id}` - İlan güncelle (Auth gerekli)
-- `DELETE /api/cars/{id}` - İlan sil (Auth gerekli)
-- `GET /api/cars/user/{userId}` - Kullanıcının ilanları
-
----
-
-## 🧪 Test Etme
-
-### 1. Hesap Oluşturun
-- Frontend'de "Kayıt Ol" butonuna tıklayın
-- Form doldurun ve gönder
-
-### 2. Giriş Yapın
-- "Giriş Yap" butonuna tıklayın
-- Email ve şifre girin
-
-###  3. İlan Ekleyin
-- Sağ üst köşede "+ İlan Ekle" butonuna tıklayın
-- Form doldurup göndermeyin
-- İlan galeriye eklenecektir
-
-### 4. İlan Detaylarını Görün
-- Herhangi bir araç kartına tıklayın
-- Detay modalı açılacaktır
-
----
-
-## 📚 Öğrenme Kaynakları
-
-### Frontend
-- HTML/CSS/JavaScript vanilla
-- Fetch API ile HTTP çağrıları
-- Local Storage yönetimi
-- Modal ve form yönetimi
-
-### Backend
-- ASP.NET Core 10.0.203
-- Entity Framework Core
-- JWT Authentication
-- SQL Server
-- RESTful API Design
-
----
-
-## ⚙️ Konfigürasyon
-
-### appsettings.json (Backend)
-```json
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=CarListingDB;Trusted_Connection=true;"
@@ -173,38 +124,24 @@ localStorage.getItem('user')       // User JSON
     "ExpiryMinutes": 1440
   }
 }
-```
+frontend.js (Frontend)
 
-### frontend.js (Frontend)
-```javascript
 const API_URL = 'http://localhost:5000/api';
-```
+🔧 Troubleshooting
+ API connection failed
+ Make sure the backend is running: http://localhost:5000
+ Check firewall settings
+ Verify CORS settings
+ Database error
 
----
+ dotnet ef database drop
+ dotnet ef database update
+ Token error
+ Open the browser console (F12)
+ Check whether a token exists in localStorage
+ Make sure the token has not expired
+📦 Project Structure
 
-## 🔧 Sorun Giderme
-
-### API bağlantısı başarısız
-- Backend'in çalıştığından emin olun: `http://localhost:5000`
-- Firewall ayarlarını kontrol edin
-- CORS ayarlarını doğrulayın
-
-### Veritabanı hatası
-```bash
-dotnet ef database drop
-dotnet ef database update
-```
-
-### Token hatası
-- Browser konsolunu açın (F12)
-- localStorage'da token olup olmadığını kontrol edin
-- Token'ın süresi dolmadığını kontrol edin
-
----
-
-## 📦 Proje Yapısı
-
-```
 proje11-2-1/
 ├── frontend.html
 ├── frontend.css
@@ -221,43 +158,28 @@ proje11-2-1/
 │   ├── appsettings.json
 │   └── CarListingAPI.csproj
 └── README.md
-```
+🎓 Development Stages
+✅ Completed
+ Frontend UI design
+ Modern responsive layout
+ Login/Register system
+ JWT authentication
+ Car listings CRUD
+ Database integration
+  🔄 Future Improvements
+ Profile management
+ Car photo uploads
+ Comment system
+ Favorites
+ Statistics
+ Admin panel
+ Email verification
+ Password reset
+📞 Support
+ If you have any questions:
 
----
-
-## 🎓 Geliştirme Aşamaları
-
-### ✅ Tamamlanan
-- Frontend UI tasarımı
-- Modern responsive layout
-- Login/Register sistemi
-- JWT authentication
-- Araç ilanları CRUD
-- Database integration
-
-### 🔄 Gelecek Geliştirmeler
-- Profil yönetimi
-- İlan fotoğraf yükleme
-- Yorum sistemi
-- Favoriler
-- İstatistikler
-- Admin paneli
-- Email doğrulama
-- Şifre sıfırlama
-
----
-
-## 📞 Destek
-
-Herhangi bir sorunuz varsa:
-1. Browser console'unu kontrol edin (F12 → Console)
-2. Network tab'ında API çağrılarını izleyin
-3. Backend log'larına bakın
-
----
-
-**Son Güncelleme**: Mart 22, 2026
-**Versiyon**: 1.0
-=======
-# car-searching-website
->>>>>>> 5238cab077636de90a05daa7b0fea113798fcce0
+ Check the browser console (F12 → Console)
+ Monitor API calls in the Network tab
+ Check backend logs
+ Last Updated: March 22, 2026
+ Version: 1.0

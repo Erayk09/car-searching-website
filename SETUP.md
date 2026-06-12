@@ -1,86 +1,61 @@
-# 🚗 ArabaAra Projesi - Hızlı Başlama Rehberi
+🚗 ArabaAra Project - Quick Start Guide
+📦 Project Structure
 
-## 📦 Proje Yapısı
-
-```
 proje11-2-1/
-├── frontend.html              ← Ana sayfa (tarayıcıda aç)
-├── frontend.css               ← Stiller
-├── frontend.js                ← JavaScript & API entegrasyonu
-├── test-api.html              ← API test sayfası
-├── README.md                  ← Detaylı dokümantasyon
-├── SETUP.md                   ← Bu dosya
-├── görseller/                 ← Resimler
+├── frontend.html              ← Main page (open in browser)
+├── frontend.css               ← Styles
+├── frontend.js                ← JavaScript & API integration
+├── test-api.html              ← API test page
+├── README.md                  ← Detailed documentation
+├── SETUP.md                   ← This file
+├── görseller/                 ← Images
 ├── backend/                   ← ASP.NET Core API
-│   ├── run.bat                ← Windows: Backend başlat
+│   ├── run.bat                ← Windows: Start backend
 │   └── ...
-└── USB-KURULUMu.md            ← USB'den çalıştırma
-```
+└── USB-KURULUMu.md            ← Running from USB
+⚡ Get Started in 1 Minute
+Step 1: Start the Backend (CMD or PowerShell)
 
----
-
-## ⚡ 1 Dakikada Başla
-
-### Adım 1: Backend'i Başlat (CMD veya PowerShell)
-```bash
 cd backend
 dotnet run
-```
-Beklenen sonuç: `Now listening on: http://localhost:5000`
+Expected output: Now listening on: http://localhost:5000
 
-### Adım 2: Frontend'i Aç
-- `frontend.html` dosyasını çift tıkla
-- veya tarayıcıya sürükle
-- veya Live Server ile aç
+Step 2: Open the Frontend
+Double-click frontend.html
+or drag it into the browser
+or open it with Live Server
+Step 3: Test
+Click the "Register" button
+Fill out the form and complete registration
+Log in
+Add a listing
+🧪 Troubleshooting
+Backend doesn’t start: "dotnet: The term 'dotnet' is not recognized"
+→ Is the .NET 10 SDK installed? Check: echo %PATH%
 
-### Adım 3: Test Et
-1. "Kayıt Ol" butonuna tıkla
-2. Form doldurup kayıt oluş
-3. Giriş yap
-4. İlan ekle
+To see errors in the frontend:
+Press F12 in your browser
+Open the Console tab
+Try the forms and view the errors
+Cannot connect to the API:
+Check that the backend is running (http://localhost:5000)
+Check firewall settings
+Open the test-api.html file and test
+📊 Database
+LocalDB Setup (First Time)
 
----
-
-## 🧪 Sorunları Giderme
-
-### Backend başlamıyor: "dotnet: The term 'dotnet' is not recognized"
-→ .NET 5 SDK kurulu mu? Kontrol et: `echo %PATH%`
-
-### Frontend'de hata görmek için:
-1. Tarayıcıda **F12** tuşuna bas
-2. **Console** tab'ını aç
-3. Formları dene ve hataları gör
-
-### API'ye bağlanılamıyor:
-1. Backend'in çalıştığını kontrol et (http://localhost:5000)
-2. Firewall ayarlarını kontrol et
-3. test-api.html dosyasını aç ve test et
-
----
-
-## 📊 Veritabanı
-
-### LocalDB Kurulumu (İlk Kez)
-```bash
 cd backend
 dotnet ef database update
-```
+Reset the Database
 
-### Veritabanı Sıfırlama
-```bash
 cd backend
 dotnet ef database drop
 dotnet ef database update
-```
+🔐 Test Accounts
+If you cannot register a user, run the following SQL to seed the database with test data:
 
----
 
-## 🔐 Test Hesapları
-
-Kullanıc kayıt edemeşzeniz, veritabanını test verisiyle doldurmak için:
-
-```sql
--- SQL Server Management Studio'da çalıştırın
+-- Run this in SQL Server Management Studio
 INSERT INTO Users (Email, Username, PasswordHash, FullName, CreatedAt, IsActive)
 VALUES ('test@example.com', 
         'testuser', 
@@ -88,50 +63,29 @@ VALUES ('test@example.com',
         'Test User',
         GETUTCDATE(), 
         1);
-```
+🚀 Deployment (Optional)
+Frontend (Static)
+Copy it to any web server
+or use Firebase Hosting, Netlify, Vercel
+Backend (ASP.NET Core)
 
----
-
-## 🚀 Deployment (Opsiyonel)
-
-### Frontend (Statik)
-- Herhangi bir web serverına kopyala
-- veya Firebase Hosting, Netlify, Vercel kullan
-
-### Backend (ASP.NET Core)
-```bash
 dotnet publish -c Release -o ./publish
-```
+📞 Quick Reference
+Problem	Solution
+"I can’t log in"	Open F12 Console and check the errors
+"Database error"	dotnet ef database drop + update
+"Port 5000 is in use"	Use another port: dotnet run --urls "http://localhost:5001"
+"Frontend can’t find the API"	Check whether the backend is running
+📁 Opening in Firefox/Edge/Chrome
+Option 1: Drag & Drop
+frontend.html → Browser window
 
----
+Option 2: Live Server (Visual Studio Code)
+Open frontend.html in VS Code
+Right-click → "Open with Live Server"
+Option 3: Python Server
 
-## 📞 Hızlı Referans
-
-| Problem | Çözüm |
-|---------|-------|
-| "Giriş yapamıyorum" | F12 Console'u aç, hataları gör |
-| "Veritabanı hası" | `dotnet ef database drop` + `update` |
-| "Port 5000 kullanımda" | Başka port: `dotnet run --urls "http://localhost:5001"` |
-| "Frontend API'yi bulamıyor" | Backend çalışıyor mu kontrol et |
-
----
-
-## 📁 Firefox/Edge/Chrome'da Açma
-
-### Seçenek 1: Dosyayı Sürükle
-`frontend.html` → Tarayıcı penceresi
-
-### Seçenek 2: Live Server (Visual Studio Code)
-1. VS Code'da `frontend.html` aç
-2. Sağ tıkla → "Open with Live Server"
-
-### Seçenek 3: Python Server
-```bash
-# frontend.html'in olduğu klasöre git
+# Go to the folder where frontend.html is located
 python -m http.server 8000
-# Sonra: http://localhost:8000
-```
-
----
-
-**Hazır mısın? Başla!** 🚀
+# Then: http://localhost:8000
+Ready to go? Start now! 🚀
